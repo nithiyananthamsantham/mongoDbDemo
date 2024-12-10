@@ -1,0 +1,51 @@
+#spring.application.name=mongoDbDemo
+server:
+  port: 9191
+spring:
+  application:
+    name: mongoDbDemo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hotelDb
+    username: postgres
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  data:
+    mongodb:
+      database: orderdb
+      host: localhost
+      port: 27017
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: topic-from-service
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.*
+#    producer:
+##      bootstrap-servers: localhost:9092
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      
+management:
+  server:
+    port: 9001
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+#datasource:
+#    url: jdbc:postgresql://localhost:5432/hotelDb/dev_hotel_pro
+#    username: hotelDb
+#    password: admin
+#  jpa:
+#  hibernate:
+#    ddl-auto: update
+#    show-sql: true
