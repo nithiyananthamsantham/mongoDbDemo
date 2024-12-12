@@ -5,9 +5,9 @@ spring:
   application:
     name: mongoDbDemo
   datasource:
-    url: jdbc:postgresql://localhost:5432/hotelDb
+    url: jdbc:postgresql://database-15.cnc0cw22ot5l.us-east-2.rds.amazonaws.com:5432/hoteldb
     username: postgres
-    password: admin
+    password: rds202024
   jpa:
     hibernate:
       ddl-auto: none
