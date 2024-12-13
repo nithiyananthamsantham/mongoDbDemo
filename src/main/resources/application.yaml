@@ -5,29 +5,29 @@ spring:
   application:
     name: mongoDbDemo
   datasource:
-    url: jdbc:postgresql://database-15.cnc0cw22ot5l.us-east-2.rds.amazonaws.com:5432/hoteldb
+    url: jdbc:postgresql://database-18.cnc0cw22ot5l.us-east-2.rds.amazonaws.com:5432/hoteldb
     username: postgres
-    password: rds202024
+    password: rdsdb2024
   jpa:
     hibernate:
       ddl-auto: none
     show-sql: true
-  data:
-    mongodb:
-      database: orderdb
-      host: localhost
-      port: 27017
-  kafka:
-    consumer:
-      bootstrap-servers: localhost:9092
-      group-id: topic-from-service
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      properties:
-        spring:
-          json:
-            trusted:
-              packages: com.*
+#  data:
+#    mongodb:
+#      database: orderdb
+#      host: localhost
+#      port: 27017
+#  kafka:
+#    consumer:
+#      bootstrap-servers: localhost:9092
+#      group-id: topic-from-service
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      properties:
+#        spring:
+#          json:
+#            trusted:
+#              packages: com.*
 #    producer:
 ##      bootstrap-servers: localhost:9092
 #      key-serializer: org.apache.kafka.common.serialization.StringSerializer
