@@ -5,18 +5,18 @@ spring:
   application:
     name: mongoDbDemo
   datasource:
-    url: jdbc:postgresql://database-18.cnc0cw22ot5l.us-east-2.rds.amazonaws.com:5432/hoteldb
+    url: jdbc:postgresql://database-6.cnc0cw22ot5l.us-east-2.rds.amazonaws.com:5432/hoteldb
     username: postgres
     password: rdsdb2024
   jpa:
     hibernate:
       ddl-auto: none
     show-sql: true
-#  data:
-#    mongodb:
-#      database: orderdb
-#      host: localhost
-#      port: 27017
+  data:
+    mongodb:
+      database: orderdb
+      host: localhost
+      port: 27017
 #  kafka:
 #    consumer:
 #      bootstrap-servers: localhost:9092
