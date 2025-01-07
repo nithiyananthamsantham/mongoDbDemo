@@ -1,5 +1,6 @@
 package com.chirohi.mongodemo.model;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -19,6 +20,7 @@ public class Order {
 	private double price;
 	
 	private List<String> shippingAddressListList;
+	
 
 	public Order(String id, String orderId, String productName, int quantity, double price, List<String> shippingAddressList) {
 		super();

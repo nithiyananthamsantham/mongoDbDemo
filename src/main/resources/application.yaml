@@ -5,9 +5,9 @@ spring:
   application:
     name: mongoDbDemo
   datasource:
-    url: jdbc:postgresql://database-6.cnc0cw22ot5l.us-east-2.rds.amazonaws.com:5432/hoteldb
+    url: jdbc:postgresql://localhost:5432/hotelDb
     username: postgres
-    password: rdsdb2024
+    password: admin
   jpa:
     hibernate:
       ddl-auto: none
@@ -32,7 +32,7 @@ spring:
 ##      bootstrap-servers: localhost:9092
 #      key-serializer: org.apache.kafka.common.serialization.StringSerializer
 #      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      
+
 management:
   server:
     port: 9001
@@ -49,3 +49,8 @@ management:
 #  hibernate:
 #    ddl-auto: update
 #    show-sql: true
+hotel:   
+    app:
+     provider:
+        url: https://github.com/nithiyananthamsantham/configuration_hotel
+
