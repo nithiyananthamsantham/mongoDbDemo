@@ -44,7 +44,6 @@ public class SecurityConfig {
 					}
 				});
 			//	.formLogin(Customizer.withDefaults());// Enable form-based login
-		
 		return http.build();
 	}
 

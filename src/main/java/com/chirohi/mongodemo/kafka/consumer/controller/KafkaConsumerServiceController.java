@@ -19,7 +19,7 @@ public class KafkaConsumerServiceController {
 	public ResponseEntity<Object> consumeKafkaMessage(){
 		
 		
-		return ResponseEntity.ok("Successfully received message from kafka!!!"+consumerService.consume());
+		return ResponseEntity.ok("Successfully received message from kafka!!!"+consumerService.consumeWithPropertiesConfig());
 	}
 	
 

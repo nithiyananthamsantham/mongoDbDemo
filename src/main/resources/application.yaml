@@ -1,6 +1,10 @@
 #spring.application.name=mongoDbDemo
 server:
   port: 9191
+  ssl:
+    key-store: E:/ChiRohi/keystore.p12
+    key-store-password: secret
+    key-alias: hotel-server
 spring:
   application:
     name: mongoDbDemo
