@@ -16,19 +16,20 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="user_acc", schema="dev_hotel_pro")
+@Table(name="user_detail", schema="dev_hotel_pro")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class UserAccounts implements UserDetails{
+public class UserDetail implements UserDetails{
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@Id
+
 	String name;
+	@Id
 	String email;
 	String password;
 	@Override

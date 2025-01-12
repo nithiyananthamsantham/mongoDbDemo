@@ -9,21 +9,23 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.chirohi.mongodemo.postgres.entity.UserAccounts;
+import com.chirohi.mongodemo.postgres.entity.UserDetail;
 import com.chirohi.mongodemo.postgres.model.UserAccountsDto;
+import com.chirohi.mongodemo.postgres.repository.AppUserAccountRepository;
 import com.chirohi.mongodemo.postgres.repository.UserAccountRepository;
 
 @Service
-public class UserSerrviceImpl implements UserService{
+public class AppUserSerrviceImpl implements AppUserServiceDetailService{
 
 	@Autowired
-	private UserAccountRepository userAccRepo;
+	private AppUserAccountRepository userAccRepo;
 	
 	@Autowired
 	private PasswordEncoder encoder;
 	
 	@Override
-	public UserAccounts signupUser(UserAccountsDto signupRequst) {
-		UserAccounts user = new UserAccounts();
+	public UserDetail signupUser(UserAccountsDto signupRequst) {
+		UserDetail user = new UserDetail();
 		System.out.println("inside signupUser111111111");
 		user.setName(signupRequst.getName());
 		user.setEmail(signupRequst.getEmail());
@@ -33,8 +35,15 @@ public class UserSerrviceImpl implements UserService{
 	}
 
 	@Override
-	public Optional<UserAccounts> getUserByName(String userName) {
-		return userAccRepo.findById(userName);
+	public UserDetail loadUserByUsername(String username) throws UsernameNotFoundException {
+		return userAccRepo.findById(username).get();
+	}
+
+	@Override
+	public Optional<UserDetail> getUserByEmail(String email) {
+		
+		return userAccRepo.findById(email);
+		//return Optional.empty();
 	}
 
 //	@Override

@@ -1,5 +1,7 @@
 package com.chirohi.mongodemo.kafka.producer.controller;
 
+import java.util.HashSet;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,8 @@ public class KafkaProducerController {
 
 	@Autowired
 	private KafkaMessagePublisherService kafkaMsgService;
+	
+	HashSet<String> strSet = new HashSet<>();
 	
 	@GetMapping("/publish/{message}")
 	public ResponseEntity<?> sendMessageToKafkaTopic(@PathVariable String message){
