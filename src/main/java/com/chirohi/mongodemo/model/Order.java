@@ -1,10 +1,11 @@
 package com.chirohi.mongodemo.model;
 
-import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.chirohi.mongodemo.validation.OrderTypeValidator;
 
 @Document
 public class Order {
@@ -19,28 +20,50 @@ public class Order {
 	
 	private double price;
 	
+	@OrderTypeValidator
+	private String orderType;
+	
 	private List<String> shippingAddressListList;
 	
 
-	public Order(String id, String orderId, String productName, int quantity, double price, List<String> shippingAddressList) {
+	public Order(String id, String orderId, String productName, int quantity, double price, String orderType, List<String> shippingAddressList) {
 		super();
 		this.id = id;
 		this.orderId = orderId;
 		this.productName = productName;
 		this.quantity = quantity;
 		this.price = price;
+		this.orderType = orderType;
 		this.shippingAddressListList = shippingAddressList;
-	}
-
-	public Order() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
 	public String toString() {
 		return "Order [id=" + id + ", orderId=" + orderId + ", productName=" + productName + ", quantity=" + quantity
-				+ ", price=" + price + ", shippingAddressList=" + shippingAddressListList + "]";
+				+ ", price=" + price + ", orderType=" + orderType + ", shippingAddressListList="
+				+ shippingAddressListList + "]";
+	}
+
+	public Order() {
+		super();
+	}
+
+
+	public String getOrderType() {
+		return orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+	}
+
+	public List<String> getShippingAddressListList() {
+		return shippingAddressListList;
+	}
+
+	public void setShippingAddressListList(List<String> shippingAddressListList) {
+		this.shippingAddressListList = shippingAddressListList;
 	}
 
 	public String getId() {

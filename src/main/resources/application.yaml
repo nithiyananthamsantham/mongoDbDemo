@@ -6,6 +6,16 @@ server:
     key-store-password: secret
     key-alias: hotel-server
 spring:
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+##          github:
+##            clientId: github-client-id
+##            clientSecret: github-client-secret
+#          google:
+#            client-id: 1032459263243-1q2ptuluk0n3hkmf0rh0pq5v2r4jug52.apps.googleusercontent.com
+#            client-secret: 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
   application:
     name: mongoDbDemo
   datasource:
