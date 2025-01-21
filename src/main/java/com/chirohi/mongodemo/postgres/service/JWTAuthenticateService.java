@@ -34,7 +34,7 @@ public class JWTAuthenticateService {
 
 	private String createToken(Map<String, Object> claims, String email) {
 		
-		
+		System.out.println("createToken is called.....!!!");
 		return Jwts.builder()
 				.setClaims(claims)
 				.setSubject(email)
