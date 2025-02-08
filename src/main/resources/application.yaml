@@ -2,9 +2,9 @@
 server:
   port: 9191
   ssl:
-    key-store: E:/ChiRohi/keystore.p12
+    key-store: E:/ChiRohi/new_keystore/keystore.p12
     key-store-password: secret
-    key-alias: hotel-server
+    key-alias: myalias
 spring:
 #  security:
 #    oauth2:
@@ -12,7 +12,7 @@ spring:
 #        registration:
 ##          github:
 ##            clientId: github-client-id
-##            clientSecret: github-client-secret
+##            clientSecret: github-client-secret    
 #          google:
 #            client-id: 1032459263243-1q2ptuluk0n3hkmf0rh0pq5v2r4jug52.apps.googleusercontent.com
 #            client-secret: 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
@@ -63,8 +63,24 @@ management:
 #  hibernate:
 #    ddl-auto: update
 #    show-sql: true
-hotel:   
-    app:
-     provider:
-        url: https://github.com/nithiyananthamsantham/configuration_hotel
+
+#health:
+#    circuitbreakers:
+#      enabled: true
+#resilience4j:
+#  circuitbreaker:
+#    instances:
+#      order-service:
+#        sliding-window-type: COUNT_BASED
+#        failure-rate-threshold: 50
+#        minimum-number-of-calls: 5
+#        automatic-transition-from-open-to-half-open-enabled: true
+#        wait-duration-in-open-state: 5s
+#        permitted-number-of-calls-in-half-open-state: 3
+#        sliding-window-size: 10
+#        register-health-indicator: true
+#hotel:   
+#    app:
+#     provider:
+#        url: https://github.com/nithiyananthamsantham/configuration_hotel
 

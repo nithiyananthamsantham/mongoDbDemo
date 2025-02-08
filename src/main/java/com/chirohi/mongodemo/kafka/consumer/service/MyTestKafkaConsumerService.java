@@ -36,6 +36,7 @@ public class MyTestKafkaConsumerService {
 		consumer.subscribe(Arrays.asList("test"));
 
 		List<String> messageList = new ArrayList<>();
+		
 
 		ConsumerRecords<String, String> records = consumer.poll(Duration.ofSeconds(5));
 
@@ -59,12 +60,14 @@ public class MyTestKafkaConsumerService {
 	 * 
 	 * @param message
 	 */
+	
 	/*
-	 * @KafkaListener(topics = "test", groupId = "topic-from-service") public void
-	 * consume(String message) {
+	 * @KafkaListener(topics = "test", groupId = "topic-from-service", concurrency =
+	 * "3") public void consume(String message) {
 	 * 
 	 * log.info("test consumer consumed message {} " + message);
 	 * 
 	 * }
 	 */
+	 
 }

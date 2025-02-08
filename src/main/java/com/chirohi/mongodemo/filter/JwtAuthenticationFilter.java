@@ -39,7 +39,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 			filterChain.doFilter(request, response);
 			return;
 		}
-		else if(authTokenHeader == null) {
+		else if(authTokenHeader == null) {	
 			filterChain.doFilter(request, response);
 			return;
 		}
